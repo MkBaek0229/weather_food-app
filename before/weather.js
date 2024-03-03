@@ -13,7 +13,7 @@ function callWeather(){
   //실행할 내용
     fetch("https://api.openweathermap.org/data/2.5/weather?id=1835224&appid=7f0663a9ce5504e9a922f50b0d9bacc3")
     .then((response) => response.json())
-    .then((data) => {        $weather_icon.src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png";
+    .then((data) => {$weather_icon.src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png";
         // 켈빈온도 -> 섭씨온도 °C = K - 273.15
         $weather_temp.textContent = Math.round(data.main.temp - 273.15) + "°C";
 
