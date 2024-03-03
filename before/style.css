@@ -53,6 +53,12 @@ header > h1 {
     color: var(--color2);
 }
 
+/* 헤더바가 425px이하일때 Header*/
+@media all and (max-width : 425px) {
+    header > h1{
+        font-size: 24px;
+    }
+}
 
 a {
     display: flex;
@@ -122,6 +128,19 @@ main {
 .board.flip {
     transform: rotateY(180deg);
  }
+
+
+ /* 헤더바가 425px이하일때 board*/
+@media all and (max-width : 425px) {
+    .board{
+        margin-top: 15%;
+        position: relative;
+        width: 250px;
+        height: 250px;
+        transform-style: preserve-3d;
+        transition: transform 0.5s;
+    }
+}
 
 .card {
     margin:  20px 5px;
