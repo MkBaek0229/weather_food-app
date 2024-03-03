@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨에 맞는 음식 주문하기</title>
+
+        <!-- fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+        
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div id="container">
+    </div>
+    <div id="wrap">
+    <header>
+        <h1>날씨와 어울리는 음식 추천</h1> 
+    </header>
+
+<div>
+    <a href="#" class="recomandbtn" onclick="showFood()">
+        <div class="wrap">
+          <div class="icon"><i class="fa-solid fa-utensils"></i></div>
+        </div>
+    </a>
+</div>
+
+    <main>
+        <section class="board">
+                <div class="weather card">
+                    <img id="weathericon" src="" alt="날씨사진">
+                    <h2 id="temp">26º</h2>
+                    <p>대전</p>
+                </div>
+
+                <div class="food card">
+                    음식추천
+                </div>
+        </section>  
+
+    
+
+
+    </main>
+
+    <footer>요즘 같은 날씨 이런 음식 어떄요!? - My portfolio</footer>
+        
+    </div>
+    
+    <script src="weather.js"></script>
+    <script src="https://kit.fontawesome.com/12b604f56a.js" crossorigin="anonymous"></script>
+</body>
+</html>
