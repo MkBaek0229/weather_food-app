@@ -22,7 +22,7 @@
       </header>
 
       <div>
-        <a href="#" class="recomandbtn" onclick="showFood()">
+        <a href="#" class="weatherToFoodCardButton" onclick="cardflip()">
           <div class="wrap">
             <div class="icon"><i class="fa-solid fa-utensils"></i></div>
           </div>
@@ -38,10 +38,20 @@
               alt="날씨사진"
             />
             <h2 id="temp">26º</h2>
-            <p>대전</p>
+            <p id="local">대전</p>
           </div>
 
-          <div class="food card">음식추천</div>
+          <div class="food card">
+            <img id="food_image" src="" alt="음식 사진" />
+            <h2 id="food_name"></h2>
+            <p id="food_description"></p>
+
+            <div class="like-container">
+              <div class="like-cnt unchecked" id="like-cnt">
+                <i class="like-btn fa-regular fa-thumbs-up"></i>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
 
