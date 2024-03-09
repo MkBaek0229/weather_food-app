@@ -140,18 +140,26 @@ main {
   margin: 20px 5px;
   border-radius: 20px;
   position: absolute;
-  min-width: 100%;
+  max-width: 100%;  
   min-height: 100%;
   background-color: var(--color2);
-  padding: 40px;
+  padding: 60px;
   backface-visibility: hidden;
   box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
+}
+
+
+.weather {
+
 }
 
 /* food 카드는 뒤집어놓기 */
 .food {
   transform: rotateY(180deg);
+  min-height: 300px;
 }
+
+
 
 #weathericon {
   position: relative;
@@ -198,44 +206,51 @@ main {
   font-size: 20px;
 }
 
-@media all and (min-width: 325px) {
-  #food_image {
-    max-width: 100%;
-  }
-  #food_name {
-    font-size: 20px;
-  }
-
-  #food_description {
-    font-size: 14px;
-  }
-}
 
 /* 아이콘을 버튼으로 스타일링 */
 .like-container {
-  filter: url("#filter");
-  position: absolute;
-  left: 55%;
-  top: 50%;
-  transform: translate(50%, -50%);
+  max-width: 100%;
+  min-height: 60px;
+  position: relative;
+  
 }
 .like-cnt {
   position: absolute;
   cursor: pointer;
-  left: 50%;
-  top: 100%;
-  transform: translate(50%, -50%);
-  background: rgba(255, 255, 255, 0.3);
+  left: 10%;
+  top: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgb(85, 37, 37);
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  text-align: center;
-  line-height: 75px;
   z-index: 10;
 }
-.like-btn {
-  color: #fff;
+
+.unlike-cnt {
+  position: absolute;
+  cursor: pointer;
+  left: 50%;
+  top: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgb(255, 0, 0);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 10;
 }
+
+.like-btn,.unlike-btn {
+  color: #ffffff;
+}
+
+ 
 
 @keyframes weather-icon-move {
   50% {
