@@ -211,21 +211,24 @@ main {
   }
 }
 
-/* 아이콘을 버튼으로 스타일링 */
+body {
+  background: #333;
+}
 .like-container {
   filter: url("#filter");
   position: absolute;
-  left: 55%;
-  top: 50%;
+  left: 50%;
+  top: 90%;
   transform: translate(50%, -50%);
 }
+
 .like-cnt {
   position: absolute;
   cursor: pointer;
   left: 50%;
-  top: 100%;
+  top: 50%;
   transform: translate(50%, -50%);
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.3);
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -233,8 +236,9 @@ main {
   line-height: 75px;
   z-index: 10;
 }
-.like-btn {
-  color: #fff;
+
+.fa-thumbs-up {
+  font-size: 2em;
 }
 
 @keyframes weather-icon-move {

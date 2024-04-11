@@ -3,8 +3,13 @@
 // 날씨 아이콘
 const $weather_icon = document.querySelector("#weathericon");
 
-// 현재 온도
+// 날씨 카드에서 나타낼 현재 온도
 const $weather_temp = document.querySelector("#temp");
+
+// 현재 온도 상태를 저장해둘 변수 now_temp
+let now_temp = 0;
+// 좋아요 버튼
+const $like_btn = document.querySelector(".like-container");
 
 // 날씨정보를 불러오는 함수
 function callWeather() {
@@ -18,7 +23,12 @@ function callWeather() {
         "../before/assets/svg/" + data.weather[0].icon + ".svg";
       // 켈빈온도 -> 섭씨온도 °C = K - 273.15
       $weather_temp.textContent = Math.round(data.main.temp - 273.15) + "°C";
+      now_temp = Math.round(data.main.temp - 273.15);
+
+      // 날씨 정보를 가져온 후에 음식 정보를 표시
+      showfood();
     })
+
     .catch((error) => {
       console.error("Error fetching data:", error);
     });
@@ -49,19 +59,48 @@ function cardflip() {
 
   $board.classList.toggle("flip");
 
-  showfood();
+  callWeather();
 }
 
 function showfood() {
   fetch("../before/food.json")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-      $food_image.src = data.food[0].image;
-      $food_name.textContent = data.food[0].name;
-      $food_description.textContent = data.food[0].description;
+      // 온도가 10도미만일때
+      if (now_temp < 10) {
+        $food_image.src = data.food[0].image;
+        $food_name.textContent = data.food[0].name;
+        $food_description.textContent = data.food[0].description;
+        // 온도가 10도 ~ 15도 사이일때
+      } else if (now_temp >= 10 && now_temp <= 15) {
+        $food_image.src = data.food[2].image;
+        $food_name.textContent = data.food[2].name;
+        $food_description.textContent = data.food[2].description;
+        // 온도가 15도 ~ 20도 사이일때
+      } else if (now_temp >= 15 && now_temp <= 20) {
+        $food_image.src = data.food[3].image;
+        $food_name.textContent = data.food[3].name;
+        $food_description.textContent = data.food[3].description;
+      }
+      // 온도가 20도 ~ 25도 사이일때
+      else if (now_temp >= 20 && now_temp <= 25) {
+        $food_image.src = data.food[4].image;
+        $food_name.textContent = data.food[4].name;
+        $food_description.textContent = data.food[4].description;
+      }
+      // 온도가 25도 ~ 30도 사이일때
+      else if (now_temp >= 25 && now_temp <= 30) {
+        $food_image.src = data.food[5].image;
+        $food_name.textContent = data.food[5].name;
+        $food_description.textContent = data.food[5].description;
+      }
     })
+
     .catch((error) => {
       console.error("Error fetching data:", error);
     });
 }
+
+$like_btn.addEventListener("click", (event) => {
+  alert(now_temp);
+});
