@@ -211,62 +211,28 @@ body {
   background: #333;
 }
 .like-container {
-<<<<<<< HEAD
   filter: url("#filter");
   position: absolute;
   left: 50%;
   top: 90%;
   transform: translate(50%, -50%);
-=======
-  max-width: 100%;
-  min-height: 60px;
-  position: relative;
-  
->>>>>>> 0a76b55197efdaf5e618e46fb7ac69344b6a6014
 }
 
 .like-cnt {
   position: absolute;
   cursor: pointer;
-<<<<<<< HEAD
   left: 50%;
   top: 50%;
   transform: translate(50%, -50%);
   background: rgba(0, 0, 0, 0.3);
-=======
-  left: 10%;
-  top: 35%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: rgb(85, 37, 37);
->>>>>>> 0a76b55197efdaf5e618e46fb7ac69344b6a6014
   width: 60px;
   height: 60px;
   border-radius: 50%;
   z-index: 10;
 }
 
-<<<<<<< HEAD
 .fa-thumbs-up {
   font-size: 2em;
-=======
-.unlike-cnt {
-  position: absolute;
-  cursor: pointer;
-  left: 50%;
-  top: 35%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: rgb(255, 0, 0);
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  z-index: 10;
->>>>>>> 0a76b55197efdaf5e618e46fb7ac69344b6a6014
 }
 
 .like-btn,.unlike-btn {
