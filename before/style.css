@@ -5,275 +5,118 @@
   --color4: #ffcd41;
   --color5: #2092a9;
   --color6: #35374b;
-  --color7: #ffe6e6;
 }
 
 body {
-  background-color: var(--color1);
   font-family: "Noto Sans KR", sans-serif;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 #container {
-  max-width: 520px;
-  background-color: var(--color2);
+  max-width: 1120px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  border-radius: 50px;
-  box-shadow: 2px 4px 8px var(--color1);
+  margin-top: 50px;
+  padding: 20px;
+  background-color: var(--color2);
 }
 
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url("https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?cs=srgb&dl=pexels-pixabay-209831.jpg&fm=jpg");
-  /* cover == 이미지 비율 유지하면서 컨테이너 빈공간없이 꽉채움*/
-  background-size: cover;
-  background-position: center;
-  height: 100px;
-  opacity: 0.7;
-  border-radius: 40px;
-  box-shadow: 2px 4px 8px var(--color3);
+  border: 1px solid black;
+  height: 92px;
+  margin-bottom: 50px;
 }
 
-header > h1 {
+header .logo {
+  text-align: center;
   font-size: 32px;
-  color: var(--color2);
+  font-weight: bold;
+  margin-bottom: 100px;
 }
 
-/* 헤더바가 425px이하일때 Header*/
-@media all and (max-width: 425px) {
-  header > h1 {
-    font-size: 24px;
-  }
-}
-
-.weatherToFoodCardButton {
+.weather-section {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  margin-top: 24px;
-  padding: 0px;
-  list-style: none;
+  padding: 20px;
+  width: 820px;
+  margin: 0 auto;
 }
 
-.wrap {
+.current-weather {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  box-shadow: 2px 4px 8px var(--color3);
-  border-radius: 50px;
-  height: 50px;
-  /* hover시 좀 부드럽게 변환주기 0.3초후 변환*/
-  transition: all 0.2s;
-  display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-.wrap:hover {
-  box-shadow: 0px 2px 8px var(--color6);
+#weathericon {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+}
+
+.weather-info {
+  font-size: 24px;
   color: var(--color6);
 }
 
-.wrap:active {
-  box-shadow: 0px 2px 8px var(--color3);
-  color: var(--color3);
+.today {
+  font-size: 24px;
 }
-
-.wrap .icon {
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 180%;
-  color: #2c3e50;
+.text {
+  font-weight: 900;
 }
 
 main {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: auto;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.board {
-  margin-top: 15%;
-  position: relative;
-  width: 300px;
-  height: 300px;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
-}
-
-.board.flip {
-  transform: rotateY(180deg);
-}
-
-/* 헤더바가 425px이하일때 board*/
-@media all and (max-width: 425px) {
-  .board {
-    margin-top: 15%;
-    position: relative;
-    width: 250px;
-    height: 250px;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-  }
-}
-
-.card {
-  margin: 20px 5px;
-  border-radius: 20px;
-  position: absolute;
-  max-width: 100%;  
-  min-height: 100%;
-  background-color: var(--color2);
-  padding: 60px;
-  backface-visibility: hidden;
-  box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
-}
-
-
-.weather {
-
-}
-
-/* food 카드는 뒤집어놓기 */
-.food {
-  transform: rotateY(180deg);
-  min-height: 300px;
-}
-
-
-
-#weathericon {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  top: -20px;
-  left: 100px;
-  margin: 40px 40px 0 0;
-  animation: weather-icon-move 5s ease-in-out infinite;
+  border: 1px solid black;
+  width: 800px;
+  height: 600px;
+  margin: 0 auto;
 }
 
 #temp {
-  position: absolute;
-  font-weight: 500;
-  font-size: 80px;
-  color: var(--color1);
-  bottom: 20px;
-  /* 온도를 나타내는 문자가 옆에서 날라오는 이미지효과를 위해 초반에는 텍스트를 투명하게해놓음  */
-  opacity: 0;
-  /* 온도를 나타내는 문자가 오른쪽에서 날라오도록 이미지 효과를 주기위해 배치작업*/
-  transform: translateX(150px);
-  left: 10px;
-  animation: title-appear 500ms ease-out 500ms forwards;
-}
-
-#local {
-  position: absolute;
-  font-weight: 500;
-  font-size: 28px;
-  color: var(--color1);
-  bottom: 0;
-  left: 10px;
-  animation: title-appear 1s ease-out 500ms forwards;
-}
-
-#food_image {
-  max-width: 100%;
-}
-#food_name {
   font-size: 40px;
+  font-weight: bold;
+  color: var(--color6);
 }
 
-#food_description {
-  font-size: 20px;
+.food-recommend-btn {
+  padding: 10px 20px;
+  width: 180px;
+  height: 50px;
+  background-color: var(--color6);
+  color: var(--color2);
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
 }
 
-
-body {
-  background: #333;
-}
-.like-container {
-  filter: url("#filter");
-  position: absolute;
-  left: 50%;
-  top: 90%;
-  transform: translate(50%, -50%);
+.food-recommend-btn:hover {
+  background-color: var(--color5);
 }
 
-.like-cnt {
-  position: absolute;
-  cursor: pointer;
-  left: 50%;
-  top: 50%;
-  transform: translate(50%, -50%);
-  background: rgba(0, 0, 0, 0.3);
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  z-index: 10;
+.forecast-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
-.fa-thumbs-up {
-  font-size: 2em;
+.forecast-day {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--color2);
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.like-btn,.unlike-btn {
-  color: #ffffff;
-}
-
- 
-
-@keyframes weather-icon-move {
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes title-appear {
-  from {
-    opacity: 0;
-    transform: translateX(150px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-
-@keyframes appear {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  75% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1);
-  }
+.forecast-day img {
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
 }
 
 footer {
-  font-weight: 500;
   text-align: center;
+  margin-top: 20px;
+  color: var(--color6);
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>날씨에 맞는 음식 주문하기</title>
+    <title>날씨에 맞는 음식 추천</title>
 
     <!-- fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,50 +12,51 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
 
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div id="container">
+      <!-- 로고 영역 -->
       <header>
-        <h1>날씨와 어울리는 음식 추천</h1>
+        <div class="logo">LOGO</div>
       </header>
 
-      <div>
-        <a href="#" class="weatherToFoodCardButton" onclick="cardflip()">
-          <div class="wrap">
-            <div class="icon"><i class="fa-solid fa-utensils"></i></div>
-          </div>
-        </a>
-      </div>
-
+      <!-- 날씨 정보 섹션 -->
       <main>
-        <section class="board">
-          <div class="weather card">
-            <img
-              id="weathericon"
-              src=""
-              alt="날씨사진"
-            />
-            <h2 id="temp"></h2>
-            <p id="local">대전</p>
-          </div>
-          
-          <div class="food card">
-            <p id="weather_title"></p>
-            <img id="food_image" src="" alt="음식 사진" />
-            <h2 id="food_name"></h2>
-            <p id="food_description"></p>
-           
-            <div class="like-container">
-              <div class="like-cnt unchecked" id="like-cnt">
-                <i class="fa-regular fa-thumbs-up"></i>
-              </div>
-              <div class="unlike-cnt unchecked" id="unlike-cnt">
-              <i class="unlike-btn fa-regular fa-thumbs-down"></i>
-              </div>
+        <section class="weather-section">
+          <div class="current-weather">
+            <img id="weathericon" src="" alt="날씨 아이콘" />
+            <div class="weather-info">
+              <p class="today">오늘날씨는</p>
+              <p class="today text">대체로 흐림</p>
+              <h2 id="temp">18°</h2>
             </div>
+          </div>
+          <!-- 음식 추천 버튼 -->
+          <a href="#" class="food-recommend-btn">음식 추천 받기</a>
+        </section>
 
+        <!-- 향후 날씨 예보 섹션 -->
+        <section class="forecast-section">
+          <div class="forecast-day">
+            월요일 <img src="" alt="날씨 아이콘" /> 18° 11°
+          </div>
+          <div class="forecast-day">
+            화요일 <img src="" alt="날씨 아이콘" /> 18° 11°
+          </div>
+          <div class="forecast-day">
+            수요일 <img src="" alt="날씨 아이콘" /> 18° 11°
+          </div>
+          <div class="forecast-day">
+            목요일 <img src="" alt="날씨 아이콘" /> 18° 11°
+          </div>
+          <div class="forecast-day">
+            금요일 <img src="" alt="날씨 아이콘" /> 18° 11°
           </div>
         </section>
       </main>
